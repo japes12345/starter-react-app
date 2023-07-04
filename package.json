@@ -1,10 +1,22 @@
 {
-  "name": "starter-react-app",
+  "name": "plaid-hello-world",
   "version": "0.1.0",
   "private": true,
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "npm-run-all": "^4.1.5",
+    "plaid": "^9.0.0-beta.11",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-plaid-link": "^3.3.0",
+    "react-scripts": "^5.0.1"
+  },
   "scripts": {
-    "start": "node server.js",
-    "dev": "react-scripts start",
+    "start": "run-p start-client start-server",
+    "start-client": "react-scripts start",
+    "start-server": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -27,16 +39,13 @@
       "last 1 safari version"
     ]
   },
-  "dependencies": {
-    "express": "^4.17.3"
-  },
+  "proxy": "http://localhost:8080",
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4"
+    "nodemon": "^2.0.7",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.49.9"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
